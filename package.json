@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "脚手架工具",
   "main": "index.js",
+  "bin": {
+    "lfkit": "/bin/index.js"
+  },
   "dependencies": {
   },
   "devDependencies": {},
