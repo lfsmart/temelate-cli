@@ -1,18 +1,23 @@
 {
   "name": "tools-cli",
   "version": "1.0.0",
-  "description": "脚手架工具",
+  "description": "lf-cli",
   "main": "index.js",
   "bin": {
     "lfkit": "/bin/index.js"
   },
-  "dependencies": {
+  "devDependencies": {
+    "typescript": "^5.2.2"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx tsc --watch",
+    "build": "npx tsc"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
 }
