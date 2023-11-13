@@ -1,10 +1,10 @@
 {
-  "name": "tools-cli",
+  "name": "@lfsmart/template-cli",
   "version": "1.0.0",
   "description": "lf-cli",
   "main": "index.js",
   "bin": {
-    "lfkit": "/bin/index.js"
+    "fkit": "/bin/index.js"
   },
   "devDependencies": {
     "@types/inquirer": "^9.0.6",
@@ -27,6 +27,6 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org"
   }
 }
