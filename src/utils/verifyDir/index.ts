@@ -13,5 +13,3 @@ export const verifyDir = (createDir: string): boolean => {
 
 
 
-
-

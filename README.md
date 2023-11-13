@@ -1,8 +1,19 @@
-# 脚手架开发
+### 安装
 
-# 学习链接
+```bash
+ npm i @lfsmart/template-cli 
+```
 
-[脚手架开发视频](https://www.bilibili.com/video/BV1PB4y1j7DY/?p=5&spm_id_from=pageDriver&vd_source=c05df78d37eab99c05944afbba57eba3)
+### 使用
 
+```bash
+fkit create <dir> # 创建模版
+fkit create --help # 查看手册
+```
 
+### 参考资料
+
+[commander](https://www.npmjs.com/package/commander) 
+
+[inquirer](https://www.npmjs.com/package/inquirer)
 

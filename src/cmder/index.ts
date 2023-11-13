@@ -6,7 +6,6 @@ import { Command } from 'commander';
 import { verifyDir, rmDir, mkdir, download } from '@/utils';
 const program = new Command();
 
-
 program
   .name( pkg.name )
   .version( pkg.version )
@@ -17,26 +16,28 @@ program
   .helpOption( '-h, --help')
   .usage(`<command> <dir> [option]`)
   .action( ( dir, user, opts, d ) => {
-
     if( verifyDir( dir ) ){
-      inquirer.prompt([{
-        type: 'confirm',
-        name: 'confirm',
-        message: 'folder already exist and overwrite it?'
-      }]).then( (answer) => {
-        if( answer.confirm ){
-          // 删除目录
-          rmDir( dir );
-          mkdir( dir );
-          download( dir )
-        }else{
-          mkdir( dir );
-          download( dir );
-        }
-      })
+      if( opts.force ){
+        rmDir( dir );
+        download( dir )
+      }else {
+        inquirer.prompt([{
+          type: 'confirm',
+          name: 'confirm',
+          message: 'folder already exist and overwrite it?'
+        }]).then( (answer) => {
+          if( answer.confirm ){
+            rmDir( dir );
+            download( dir )
+          }else{
+            process.stdout.write( 'operation canceled!' );
+          }
+        }).catch( err => {
+          process.stdout.write( err );
+        });
+      }
     }else {
-      mkdir( dir );
-      download( dir )
+      download( dir );
     }
   })
 program.parse( process.argv );
